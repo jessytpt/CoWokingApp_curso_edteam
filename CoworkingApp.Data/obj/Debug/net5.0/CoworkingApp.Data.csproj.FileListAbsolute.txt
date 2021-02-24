@@ -1,0 +1,15 @@
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Data\bin\Debug\net5.0\CoworkingApp.Data.deps.json
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Data\bin\Debug\net5.0\CoworkingApp.Data.dll
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Data\bin\Debug\net5.0\ref\CoworkingApp.Data.dll
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Data\bin\Debug\net5.0\CoworkingApp.Data.pdb
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Data\bin\Debug\net5.0\CoworkingApp.Models.dll
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Data\bin\Debug\net5.0\CoworkingApp.Models.pdb
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Data\obj\Debug\net5.0\CoworkingApp.Data.csprojAssemblyReference.cache
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Data\obj\Debug\net5.0\CoworkingApp.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Data\obj\Debug\net5.0\CoworkingApp.Data.AssemblyInfoInputs.cache
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Data\obj\Debug\net5.0\CoworkingApp.Data.AssemblyInfo.cs
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Data\obj\Debug\net5.0\CoworkingApp.Data.csproj.CoreCompileInputs.cache
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Data\obj\Debug\net5.0\CoworkingApp.Data.csproj.CopyComplete
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Data\obj\Debug\net5.0\CoworkingApp.Data.dll
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Data\obj\Debug\net5.0\ref\CoworkingApp.Data.dll
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Data\obj\Debug\net5.0\CoworkingApp.Data.pdb

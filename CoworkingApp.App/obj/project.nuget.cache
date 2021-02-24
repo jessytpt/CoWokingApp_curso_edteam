@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "8t+MVl+SA4njGJ8pHt8R9Zyl/aOmxwl36l+K3BqWCxfSlcUFvgbwkApZwwKEylQPYGrCAHDfcuQIbbRYzj9x6A==",
+  "success": true,
+  "projectFilePath": "D:\\EDteam\\2. Curso C#\\CoWorking\\CoworkingApp.App\\CoworkingApp.App.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jessenia\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

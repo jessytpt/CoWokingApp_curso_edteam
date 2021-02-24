@@ -1,0 +1,12 @@
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Models\bin\Debug\net5.0\CoworkingApp.Models.deps.json
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Models\bin\Debug\net5.0\CoworkingApp.Models.dll
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Models\bin\Debug\net5.0\ref\CoworkingApp.Models.dll
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Models\bin\Debug\net5.0\CoworkingApp.Models.pdb
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Models\obj\Debug\net5.0\CoworkingApp.Models.csprojAssemblyReference.cache
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Models\obj\Debug\net5.0\CoworkingApp.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Models\obj\Debug\net5.0\CoworkingApp.Models.AssemblyInfoInputs.cache
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Models\obj\Debug\net5.0\CoworkingApp.Models.AssemblyInfo.cs
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Models\obj\Debug\net5.0\CoworkingApp.Models.csproj.CoreCompileInputs.cache
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Models\obj\Debug\net5.0\CoworkingApp.Models.dll
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Models\obj\Debug\net5.0\ref\CoworkingApp.Models.dll
+D:\EDteam\2. Curso C#\CoWorking\CoworkingApp.Models\obj\Debug\net5.0\CoworkingApp.Models.pdb
