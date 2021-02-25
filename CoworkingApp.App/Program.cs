@@ -1,5 +1,7 @@
 ﻿using System;
 using CoworkingApp.Data;
+using CoWorkingApp.App.Enumerations;
+
 
 namespace CoworkingApp.App
 {
@@ -15,14 +17,14 @@ namespace CoworkingApp.App
                 roleSelected = Console.ReadLine();    
             }       
             
-            if(roleSelected=="1"){
+            if(Enum.Parse<UserRole>(roleSelected) == UserRole.Admin){
                 string menuAdminSelected = "";
                 while (menuAdminSelected!="1" && menuAdminSelected!="2")
                 {
                     Console.WriteLine("1 = Administración de Puestos; 2 = Administración de Usuarios ");   
                     menuAdminSelected = Console.ReadLine();    
                 } 
-                if (menuAdminSelected=="1")
+                if (Enum.Parse<MenuAdmin>(menuAdminSelected) == MenuAdmin.AdministracionPuestos)
                 {
                     string menuPuestosSelected = "";
                     while(menuPuestosSelected!="1" && 
@@ -30,27 +32,29 @@ namespace CoworkingApp.App
                           menuPuestosSelected!="3" &&
                           menuPuestosSelected!="4" )
                     {
-                              Console.WriteLine("Administración de puestos");
+                        Console.WriteLine("Administración de puestos");
                         Console.WriteLine("1=Crear; 2=Editar; 3=Eliminar; 4=Bloquear");
                         menuPuestosSelected = Console.ReadLine();   
                     }
+
+                    AdminPuestos menuAdminPuestosSelected = Enum.Parse<AdminPuestos>(menuPuestosSelected);
                     
-                    switch (menuPuestosSelected)
+                    switch (menuAdminPuestosSelected)
                     {
-                        case "1":
+                        case AdminPuestos.Crear:
                             Console.WriteLine("Opción: crear puesto");
                         break;
-                        case "2":
+                        case AdminPuestos.Editar:
                             Console.WriteLine("Opción: editar puesto");
                         break;
-                        case "3":
+                        case AdminPuestos.Eliminar:
                             Console.WriteLine("Opción: eliminar puesto");
                         break;
-                        case "4":
+                        case AdminPuestos.Bloquear:
                             Console.WriteLine("Opción: bloquear puesto");
                         break;
                     } 
-                }else if (menuAdminSelected=="2")
+                }else if (Enum.Parse<MenuAdmin>(menuAdminSelected)==MenuAdmin.AdministracionUsuarios)
                 {
                     string menuUsuarioSelected = "";
                     while(menuUsuarioSelected!="1" && 
@@ -62,24 +66,26 @@ namespace CoworkingApp.App
                         Console.WriteLine("1=Crear; 2=Editar; 3=Eliminar; 4=Cambiar contraseña");
                         menuUsuarioSelected = Console.ReadLine();   
                     }
+
+                    AdminUser menuAdminUsuarioSelected = Enum.Parse<AdminUser>(menuUsuarioSelected);
                     
-                    switch (menuUsuarioSelected)
+                    switch (menuAdminUsuarioSelected)
                     {
-                        case "1":
+                        case AdminUser.Crear:
                             Console.WriteLine("Opción: crear usuario");
                         break;
-                        case "2":
+                        case AdminUser.Editar:
                             Console.WriteLine("Opción: editar usuario");
                         break;
-                        case "3":
+                        case AdminUser.Eliminar:
                             Console.WriteLine("Opción: eliminar usuario");
                         break;
-                        case "4":
+                        case AdminUser.CambiarPassword:
                             Console.WriteLine("Opción: cambiar contraseña");
                         break;
                     } 
                 }
-            }else if(roleSelected=="2")
+            }else if(Enum.Parse<UserRole>(roleSelected) == UserRole.User)
             {
                 string menuUsuarioSelected = "";
                 
@@ -93,18 +99,20 @@ namespace CoworkingApp.App
 
                 }
 
-                switch(menuUsuarioSelected)
+                MenuUser menuUserSelected = Enum.Parse<MenuUser>(menuUsuarioSelected);
+
+                switch(menuUserSelected)
                 {
-                    case "1":
+                    case MenuUser.ReservarPuesto:
                         Console.WriteLine("Opción: Reservar puesto");
                     break;
-                    case "2":
+                    case MenuUser.CancelarReserva:
                         Console.WriteLine("Opción: Cancelar reserva");
                     break;
-                    case "3":
+                    case MenuUser.HistorialReservas:
                         Console.WriteLine("Opción: Ver historial de reservas");
                     break;
-                    case "4":
+                    case MenuUser.CambiarPassword:
                         Console.WriteLine("Opción: Cambiar contraseña");
                     break;
                 }
