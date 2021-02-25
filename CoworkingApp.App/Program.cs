@@ -81,6 +81,33 @@ namespace CoworkingApp.App
                 }
             }else if(roleSelected=="2")
             {
+                string menuUsuarioSelected = "";
+                
+                while(menuUsuarioSelected!="1" &&
+                      menuUsuarioSelected!="2" &&
+                      menuUsuarioSelected!="3" &&
+                      menuUsuarioSelected!="4" )
+                {
+                    Console.WriteLine("1= Reservar puesto; 2= Cancelar reserva; 3= Ver historial de reservas; 4= Cambiar contraseña");
+                    menuUsuarioSelected = Console.ReadLine();
+
+                }
+
+                switch(menuUsuarioSelected)
+                {
+                    case "1":
+                        Console.WriteLine("Opción: Reservar puesto");
+                    break;
+                    case "2":
+                        Console.WriteLine("Opción: Cancelar reserva");
+                    break;
+                    case "3":
+                        Console.WriteLine("Opción: Ver historial de reservas");
+                    break;
+                    case "4":
+                        Console.WriteLine("Opción: Cambiar contraseña");
+                    break;
+                }
                 
             }
         }
