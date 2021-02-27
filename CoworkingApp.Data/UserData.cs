@@ -43,5 +43,22 @@ namespace CoworkingApp.Data
                                     }
             return true;
         } 
+        public bool Login(string User, string Password, bool isAdmin = false){
+
+            var userCollection = jsonManager.GetCollection();
+            var passwordEncript = EncryptData.EncryptText(Password);
+            var userFound = userCollection.FirstOrDefault(p=>p.Email  == User && p.PassWord == passwordEncript);
+
+            if (isAdmin) User="admin";
+
+            if (userFound != null) return true;
+
+            return false;
+
+        }
+
+        public void Prueba(string a, string b="2" ,string c = "3"){
+            Console.WriteLine(a+b+c);            
+        }
     }
 }

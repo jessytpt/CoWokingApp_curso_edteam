@@ -7,8 +7,14 @@ namespace CoworkingApp.App
 {
     class Program
     {
+        static UserData UserDataService {get;set;} = new UserData();
+        
         static void Main(string[] args)
         {
+            
+            UserDataService.Prueba("1");
+            UserDataService.Prueba("4","5");
+            UserDataService.Prueba("6","7","8");
             string roleSelected = "";
             Console.WriteLine("\nBienvenido al CoWorking!\n");   
             while (roleSelected!="1" && roleSelected!="2")
@@ -18,6 +24,23 @@ namespace CoworkingApp.App
             }       
             
             if(Enum.Parse<UserRole>(roleSelected) == UserRole.Admin){
+
+                bool loginResult = false;
+                
+                while (!loginResult)
+                {
+                    
+                    Console.WriteLine("Ingrese correo:");
+                    var userLogin = Console.ReadLine();
+                    Console.WriteLine("Ingrese contraseña:");
+                    var passwordLogin = GetPassword();
+
+                    loginResult = UserDataService.Login(userLogin,passwordLogin);
+
+                    if (!loginResult) Console.WriteLine("Correo/Contraseña incorrectos, vuelva a intentarlo!");
+                }
+                
+
                 string menuAdminSelected = "";
                 while (menuAdminSelected!="1" && menuAdminSelected!="2")
                 {
@@ -118,6 +141,23 @@ namespace CoworkingApp.App
                 }
                 
             }
+        }
+    
+        static string GetPassword(){
+            string passwordInput = "";
+            while(true){
+                var keyPress = Console.ReadKey(true);
+                if (keyPress.Key == ConsoleKey.Enter)                {
+                    Console.WriteLine(" ");
+                    break; 
+                    
+                }
+                else{
+                    Console.Write("*");
+                    passwordInput += keyPress.KeyChar; //concatena cada caracter que el usuario ingresa
+                }
+            }
+            return passwordInput;
         }
     }
 }
