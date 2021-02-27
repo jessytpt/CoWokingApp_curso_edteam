@@ -12,9 +12,6 @@ namespace CoworkingApp.App
         static void Main(string[] args)
         {
             
-            UserDataService.Prueba("1");
-            UserDataService.Prueba("4","5");
-            UserDataService.Prueba("6","7","8");
             string roleSelected = "";
             Console.WriteLine("\nBienvenido al CoWorking!\n");   
             while (roleSelected!="1" && roleSelected!="2")

@@ -57,8 +57,6 @@ namespace CoworkingApp.Data
 
         }
 
-        public void Prueba(string a, string b="2" ,string c = "3"){
-            Console.WriteLine(a+b+c);            
-        }
+        
     }
 }
