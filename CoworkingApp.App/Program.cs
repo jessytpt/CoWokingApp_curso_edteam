@@ -1,6 +1,8 @@
 ﻿using System;
 using CoworkingApp.Data;
 using CoWorkingApp.App.Enumerations;
+using CoWorkingApp.App.Logic;
+using CoWorkingApp.Data.Tools;
 
 
 namespace CoworkingApp.App
@@ -8,6 +10,7 @@ namespace CoworkingApp.App
     class Program
     {
         static UserData UserDataService {get;set;} = new UserData();
+        static UserService UserLogicService {get;set;} = new UserService(UserDataService);
         
         static void Main(string[] args)
         {
@@ -30,7 +33,7 @@ namespace CoworkingApp.App
                     Console.WriteLine("Ingrese correo:");
                     var userLogin = Console.ReadLine();
                     Console.WriteLine("Ingrese contraseña:");
-                    var passwordLogin = GetPassword();
+                    var passwordLogin = EncryptData.GetPassword();
 
                     loginResult = UserDataService.Login(userLogin,passwordLogin);
 
@@ -89,21 +92,9 @@ namespace CoworkingApp.App
 
                     AdminUser menuAdminUsuarioSelected = Enum.Parse<AdminUser>(menuUsuarioSelected);
                     
-                    switch (menuAdminUsuarioSelected)
-                    {
-                        case AdminUser.Crear:
-                            Console.WriteLine("Opción: crear usuario");
-                        break;
-                        case AdminUser.Editar:
-                            Console.WriteLine("Opción: editar usuario");
-                        break;
-                        case AdminUser.Eliminar:
-                            Console.WriteLine("Opción: eliminar usuario");
-                        break;
-                        case AdminUser.CambiarPassword:
-                            Console.WriteLine("Opción: cambiar contraseña");
-                        break;
-                    } 
+                    //dependiendo de la op que haya escogido el usuario, se ejecutará una acción determinada
+                    UserLogicService.ExecuteAction(menuAdminUsuarioSelected);
+                    
                 }
             }else if(Enum.Parse<UserRole>(roleSelected) == UserRole.User)
             {
@@ -140,21 +131,6 @@ namespace CoworkingApp.App
             }
         }
     
-        static string GetPassword(){
-            string passwordInput = "";
-            while(true){
-                var keyPress = Console.ReadKey(true);
-                if (keyPress.Key == ConsoleKey.Enter)                {
-                    Console.WriteLine(" ");
-                    break; 
-                    
-                }
-                else{
-                    Console.Write("*");
-                    passwordInput += keyPress.KeyChar; //concatena cada caracter que el usuario ingresa
-                }
-            }
-            return passwordInput;
-        }
+        
     }
 }
