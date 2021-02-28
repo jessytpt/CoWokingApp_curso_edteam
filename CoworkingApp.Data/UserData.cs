@@ -66,6 +66,41 @@ namespace CoworkingApp.Data
             
         }
 
+        public User FindUser(string email)
+        {
+            var userCollection = jsonManager.GetCollection();
+            return userCollection.FirstOrDefault(p => p.Email == email);
+        }
+
+        public bool EditUser(User editUser){
+            
+            editUser.PassWord = EncryptData.EncryptText(editUser.PassWord);
+            
+            var userCollection = jsonManager.GetCollection();
+            
+            var indexUser = userCollection.FindIndex(p => p.UserId == editUser.UserId);
+            
+            userCollection[indexUser] = editUser;
+            
+            jsonManager.SaveCollection(userCollection);
+            
+            return true;
+            
+        }
+
+        public bool DeleteUser(Guid userId)
+        {
+            var userCollection = jsonManager.GetCollection();
+
+            var indexUser = userCollection.FindIndex(p=> p.UserId == userId);
+            
+            userCollection.RemoveAt(indexUser);
+
+            jsonManager.SaveCollection(userCollection);
+
+            return true;
+
+        }
         
     }
 }
