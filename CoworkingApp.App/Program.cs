@@ -10,8 +10,9 @@ namespace CoworkingApp.App
     class Program
     {
         static UserData UserDataService {get;set;} = new UserData();
+        static DeskData DeskDataService {get;set;} = new DeskData();
         static UserService UserLogicService {get;set;} = new UserService(UserDataService);
-        
+        static DeskService DeskLogicService {get;set;} = new DeskService(DeskDataService);
         static void Main(string[] args)
         {
             
@@ -40,7 +41,9 @@ namespace CoworkingApp.App
                     if (!loginResult) Console.WriteLine("Correo/Contraseña incorrectos, vuelva a intentarlo!");
                 }
                 
+                while(true){
 
+                
                 string menuAdminSelected = "";
                 while (menuAdminSelected!="1" && menuAdminSelected!="2")
                 {
@@ -62,21 +65,8 @@ namespace CoworkingApp.App
 
                     AdminPuestos menuAdminPuestosSelected = Enum.Parse<AdminPuestos>(menuPuestosSelected);
                     
-                    switch (menuAdminPuestosSelected)
-                    {
-                        case AdminPuestos.Crear:
-                            Console.WriteLine("Opción: crear puesto");
-                        break;
-                        case AdminPuestos.Editar:
-                            Console.WriteLine("Opción: editar puesto");
-                        break;
-                        case AdminPuestos.Eliminar:
-                            Console.WriteLine("Opción: eliminar puesto");
-                        break;
-                        case AdminPuestos.Bloquear:
-                            Console.WriteLine("Opción: bloquear puesto");
-                        break;
-                    } 
+                    DeskLogicService.ExecuteAction(menuAdminPuestosSelected);
+                    
                 }else if (Enum.Parse<MenuAdmin>(menuAdminSelected)==MenuAdmin.AdministracionUsuarios)
                 {
                     string menuUsuarioSelected = "";
@@ -94,6 +84,7 @@ namespace CoworkingApp.App
                     
                     //dependiendo de la op que haya escogido el usuario, se ejecutará una acción determinada
                     UserLogicService.ExecuteAction(menuAdminUsuarioSelected);
+                }
                     
                 }
             }else if(Enum.Parse<UserRole>(roleSelected) == UserRole.User)

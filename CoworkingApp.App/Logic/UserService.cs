@@ -56,6 +56,7 @@ namespace CoWorkingApp.App.Logic
                             var userFoundDelete = userData.FindUser(Console.ReadLine());
                             while(userFoundDelete == null)
                             {
+                                
                                 Console.WriteLine("Correo no válido. Vuelva a ingresar correo: ");
                                 userFoundDelete = userData.FindUser(Console.ReadLine());
                             }

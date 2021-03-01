@@ -69,6 +69,7 @@ namespace CoworkingApp.Data
         public User FindUser(string email)
         {
             var userCollection = jsonManager.GetCollection();
+
             return userCollection.FirstOrDefault(p => p.Email == email);
         }
 
@@ -93,7 +94,7 @@ namespace CoworkingApp.Data
             var userCollection = jsonManager.GetCollection();
 
             var indexUser = userCollection.FindIndex(p=> p.UserId == userId);
-            
+
             userCollection.RemoveAt(indexUser);
 
             jsonManager.SaveCollection(userCollection);
